@@ -1,4 +1,6 @@
-
+<?php
+    include ‘connect.php’;
+    ?>
         <nav>
             <ul>
                 <li><a href="index.html">Visa produkter</a></li>

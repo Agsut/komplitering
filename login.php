@@ -2,6 +2,7 @@
     include ‘connect.php’;
     ?>
 
+
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -14,34 +15,29 @@
 <body>
     <div class="wrapper">
         <header>
-            <h1>Välkommen till Webbshoppen - Lägg till produkt</h1>
+            <h1>Välkommen till Webbshoppen - Logga in</h1>
         </header>
         <nav>
             <ul>
                 <li><a href="index.html">Visa produkter</a></li>
                 <li><a href="add_product.html">Lägg till produkt</a></li>
-				<li><a href="login.html">Logga in</a></li>
+				 <li><a href="login.html">Logga in</a></li>
             </ul>
         </nav>
         <main>
-            <form action="add_product.php" method="post">
+            <form action="login.php" method="post">
                 <p>
-                    <label for="name">Namn:</label>
-                    <input type="text" id="name" name="name">
+                    <label for="username">Användarnamn:</label>
+                    <input type="text" id="username" name="username">
                 </p>
                 
                 <p>
-                    <label for="description">Beskrivning:</label>
-                    <input type="text" id="description" name="description">
+                    <label for="paswword">Lösenord:</label>
+                    <input type="password" id="password" name="password">
                 </p>
-                
+               
                 <p>
-                    <label for="price">Pris:</label>
-                    <input type="text" id="price" name="price">
-                </p>
-                
-                <p>
-                    <input type="submit" value="Lägg till">
+                    <input type="submit" value="Logga in">
                 </p>
             </form>
         </main>
@@ -51,4 +47,3 @@
     </div>
 </body>
 </html>
-

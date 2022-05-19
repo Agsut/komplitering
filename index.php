@@ -1,3 +1,11 @@
+<?php
+    require "includes/connect.php";
+    $sql = "SELECT * FROM webbserver";
+    $result  = $dbh->prepare($sql);
+    $result->execute();
+    $result = $result->get_result();
+?>
+
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -10,7 +18,7 @@
 <body>
     <div class="wrapper">
 
-<?php include 'includes/Sidhuvud.php';   ?>
+<?php include 'includes/Sidhuvud.php'; ?>
         
         
 <main>
@@ -23,21 +31,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Hammare</td>
-                        <td>För att slå in spikar</td>
-                        <td>150 kr</td>
-                    </tr>
-                    <tr>
-                        <td>Färgburk</td>
-                        <td>För att måla</td>
-                        <td>99 kr</td>
-                    </tr>
-                    <tr>
-                        <td>penselset</td>
-                        <td>Används till färg</td>
-                        <td>50 kr</td>
-                    </tr>
+                <?php
+                    while($row=$result->fetch_assoc()){
+                        echo <<< TR
+                        <tr>
+                            <td> $row['Namn'] </td>
+                            <td> $row['Beskrivning'] </td>
+                            <td> $row['Pris'] </td>
+                        </tr>
+TR;
+                    }
+                    ?>
+
                 </tbody>
             </table>
             
